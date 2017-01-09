@@ -62,7 +62,7 @@ public class IconRepo {
 	private static void processForRemote(Dir dir) {
 		for(Dir d: dir.subDirs){
 			for(JustFile f: d.subFiles){
-				f.path = generateUrlOfGithub(f.name);
+				f.path = generateUrlOfGithub(d.name + "/" + f.name);
 			}
 		}
 	}
