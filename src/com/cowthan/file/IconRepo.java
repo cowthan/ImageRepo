@@ -21,7 +21,7 @@ import javax.imageio.ImageIO;
  */
 public class IconRepo {
 	
-	public static final String github_root = "https://raw.githubusercontent.com/cowthan/UI-Robot/master/";
+	public static final String github_root = "https://raw.githubusercontent.com/cowthan/ImageRepo/master/";
 	public static final String repo_root = "repo";
 	
 	public static boolean debug = false;
@@ -62,7 +62,7 @@ public class IconRepo {
 	private static void processForRemote(Dir dir) {
 		for(Dir d: dir.subDirs){
 			for(JustFile f: d.subFiles){
-				f.path = generateUrlOfGithub(f.name);
+				f.path = generateUrlOfGithub(d.name + "/" + f.name);
 			}
 		}
 	}
