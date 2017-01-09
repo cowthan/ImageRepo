@@ -85,11 +85,11 @@
 								<div class="tab-pane" id="${dir.name}">
 							</#if>
 							
-								<div class="main clearfix" id="main_${dir}">
+								<div class="main clearfix" id="main_${dir.name}">
 									<#list dir.subFiles as f>
 										<div class="box">
 											<div class="pic">
-												<img src="${f.path}" style='background:pink;' onclick="clickImg('${f.info}', '${f.path}');">
+												<img id="nn${f.name}" src="${f.path}" style='background:pink;width:${f.w};height:${f.h}' onclick="clickImg('${f.info}', '${f.path}');">
 											</div>
 										</div>
 									</#list>
@@ -132,21 +132,18 @@ function clickImg(info, path){
 }
 
 $(document).ready(function() {
-	
+	<#list dirs.subDirs as dir>
+		waterfall('main_${dir.name}','box');
+		
+		<#list dir.subFiles as f>
+			//$("#nn${f.name}").attr("src", "${f.path}");
+		</#list>
+		
+	</#list>
 	});
 	
 
 
-$( window ).on( "load", function(){
-	
-	<#list dirs.subDirs as dir>
-		waterfall('main_${dir}','box');
-	
-	    //模拟数据json
-	
-	</#list>
-    
-});
 
 /*
  parend 父级id

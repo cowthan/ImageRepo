@@ -24,7 +24,7 @@ public class IconRepo {
 	public static final String github_root = "https://raw.githubusercontent.com/cowthan/ImageRepo/master/";
 	public static final String repo_root = "repo";
 	
-	public static boolean debug = false;
+	public static boolean debug = true;
 	
 	///得传入repo里的目录和文件，不要以/开头，不要带repo
 	public static String generateUrlOfGithub(String file){
@@ -141,6 +141,18 @@ public class IconRepo {
 		}
 		
 		
+		public String getW() {
+			return w + "";
+		}
+		public void setW(int w) {
+			this.w = w;
+		}
+		public String getH() {
+			return h +"";
+		}
+		public void setH(int h) {
+			this.h = h;
+		}
 		public String getInfo(){
 			String s = "";
 			
