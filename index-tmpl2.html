@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>美图浏览器</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- bootstrap-jquery -->
+	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./bootstrap/css/style.css" rel="stylesheet">
+	
+    <link rel="stylesheet" href="./waterfall/waterfall.css">
+    
+</head>
+<body bgcolor="#FFFFFF">
+
+
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+			<h1 style="margin:50px;margin-left:20px">美图浏览器</h1>
+		</div>
+		<div class="col-md-6">
+	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="tabbable" id="tabs-412007">
+				
+				<ul class="nav nav-tabs" id="navhost">
+					<#list dirs.subDirs as dir>
+						<li>
+						<a href="#${dir.name}" data-toggle="tab">${dir.name}</a>
+						</li>
+					</#list>
+				</ul>
+				<div class="tab-content" id="tabhost" style="margin-top:10px;">
+					<#list dirs.subDirs as dir>
+						<div class="tab-pane" id="${dir.name}">
+							<div id="container_${dir.name}"></div>
+						</div>
+					</#list>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/x-handlebars-template" id="waterfall-tpl">
+{{#result}}
+    <div class="item">
+        <img src="{{image}}" width="{{width}}" height="{{height}}" />
+    </div>
+{{/result}}
+	</script>
+	<script src="./bootstrap/js/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./layer/layer.js"></script>
+    <script src="./layer/extend/layer.ext.js"></script>
+	<script src="./waterfall/handlebars/handlebars.js"></script>
+	<script src="./waterfall/waterfall.min.js"></script>
+    
+    <script>
+   
+    </script>
+<script>
+
+
+
+function clickImg(path){
+	var imm = "<img style='border:1px solid green;padding:10px' src='{path}' />";
+	imm = imm.replace("{path}", "" + path);
+	layer.open({
+	      type: 1,  
+	      title: false,
+	      closeBtn: false,
+	      shadeClose: true, 
+	      skin: 'layui-layer-nobg', //没有背景色：这个什么意思
+	      content: imm  ///直接传入html
+	  });
+}
+
+$(document).ready(function() {
+	
+	});
+	
+<#list dirs.subDirs as dir>
+$('#container_${dir.name}').waterfall({
+    itemCls: 'item',
+    colWidth: 300,  
+    gutterWidth: 15,
+    gutterHeight: 15,
+    isFadeIn: true,
+    maxPage: 1,
+    checkImagesLoaded: false,
+    path: function(page) {
+        return 'data/data1.json?page=' + page;
+    }
+});
+</#list>
+
+</script>
+</body>
+</html>
