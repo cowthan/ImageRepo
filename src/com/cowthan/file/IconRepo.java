@@ -21,7 +21,7 @@ import javax.imageio.ImageIO;
  */
 public class IconRepo {
 	
-	public static final String github_root = "https://raw.githubusercontent.com/cowthan/UI-Robot/master/";
+	public static final String github_root = "https://raw.githubusercontent.com/cowthan/ImageRepo/master/";
 	public static final String repo_root = "repo";
 	
 	public static boolean debug = false;
