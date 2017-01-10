@@ -51,7 +51,7 @@ public class IconRepo {
 			processForRemote(dir);
 		}
 		
-		FreeMaker.template("./", "index-tmpl.html", "./index.html", data);
+		FreeMaker.template("./", "image-tmpl.html", "./image.html", data);
 		
 		
 		String url = ("file:///" + path1111 + "/index.html").replace("\\", "/");
