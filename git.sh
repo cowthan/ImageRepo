@@ -6,3 +6,4 @@ git merge gh-pages
 git add ./
 git commit -m "no"
 git push origin master
+git checkout gh-pages
