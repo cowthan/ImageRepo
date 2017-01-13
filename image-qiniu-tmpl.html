@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>图片</title>
+    <title>图片查找</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -55,7 +55,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">
-			<h1 style="margin:50px;margin-left:20px">图片</h1>
+			<h1 style="margin:50px;margin-left:20px">图片查找</h1>
 		</div>
 		<div class="col-md-6">
 	
@@ -89,7 +89,8 @@
 									<#list dir.subFiles as f>
 										<div class="box">
 											<div class="pic">
-												<img id="nn${f.name}" src="${f.path}" style='background:pink;width:${f.w};height:${f.h}' onclick="clickImg('${f.info}', '${f.path}');">
+											<!--  width:${f.w};height:${f.h} -->
+												<img id="nn${f.name}" src="${f.path}" style='background:pink;' onclick="clickImg('${f.info}', '${f.path}');" />
 											</div>
 										</div>
 									</#list>

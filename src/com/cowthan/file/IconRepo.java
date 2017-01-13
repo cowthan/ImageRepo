@@ -298,4 +298,13 @@ public class IconRepo {
 		} 
         return new int[]{0, 0};
 	}
+	
+	public static boolean isImage(String url){
+		
+		if(url != null && (url.endsWith("jpg") || url.endsWith("png") || url.endsWith("gif") || url.equals("jpeg") )){
+			return true;
+		}
+		return false;
+		
+	}
 }
